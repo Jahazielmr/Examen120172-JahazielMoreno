@@ -6,10 +6,10 @@
 #include "Escultura.h"
 #include "Literatura.h"
 #include "Pintura.h"
-#include <stdlib.>
+#include <stdlib.h>
 
 using namespace std;
-string hexadecimal(vector<string>);
+string hexadecimal(vector<ObrasArte>);
 
 int main(){
 
@@ -232,7 +232,7 @@ int main(){
 string hexadecimal(vector<ObrasArte> a){
 	int r;
 	string acum;
-	bool entrar=true;
+	int cont;
 	vector <string> pauta;
 	pauta[0]="1";
 	pauta[1]="2";
@@ -250,20 +250,21 @@ string hexadecimal(vector<ObrasArte> a){
         pauta[13]="E";
         pauta[14]="F";
 
-
-	for(int i=0; i<6;i++){
-		r=rand()%14;
-		acum += pauta[1];
-	}
-
-	for(int j=0; j<a.size();j++){
-		
-		if(acum==a.getID){
-			bool=false;		
-			
+	do{
+		for(int i=0; i<6;i++){
+			r=rand()%14;
+			acum += pauta[1];
 		}
+
+		for(int j=0; j<a.size();j++){
 		
-	}
+			if(acum==a[j].getID()){
+				cont=1;		
+			
+			}
+		
+		}
+	}while(cont!=0);
 	
 }
 
