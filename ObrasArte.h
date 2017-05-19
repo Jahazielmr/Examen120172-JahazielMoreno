@@ -14,6 +14,7 @@ class ObrasArte{
     public:
         ObrasArte(string,string,string,string);
         ObrasArte();
+
         string getID();
         void setID(string);
 

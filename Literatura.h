@@ -11,7 +11,7 @@ class Literatura: public ObrasArte{
         string GeneroLiterario;
         string Epoca;
     public:
-        Literatura(string,string);
+        Literatura(string,string,string,string,string,string);
         Literatura();
         string getGeneroLiterario();
         void setGeneroLiterario(string);

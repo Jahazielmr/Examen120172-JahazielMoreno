@@ -1,8 +1,19 @@
 #include "Literatura.h"
+#include "ObrasArte.h"
+#include <string>
+#include <iostream>
 
-Literatura::Literatura(string GeneroLiterario,string Epoca){
+using namespace std;
+
+Literatura::Literatura(string ID,string Nombre,string Artista,string Fecha,string GeneroLiterario,string Epoca){
     this->GeneroLiterario=GeneroLiterario;
     this->Epoca=Epoca;
+    this->ID=ID;
+    this->Nombre=Nombre;
+    this->Artista=Artista;
+    this->Fecha=Fecha;
+
+
 }
 Literatura::Literatura(){
 

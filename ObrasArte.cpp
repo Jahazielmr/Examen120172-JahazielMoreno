@@ -2,6 +2,9 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
+
 
 ObrasArte::ObrasArte(string ID,string Nombre,string Artista,string Fecha){
     this->ID=ID;
