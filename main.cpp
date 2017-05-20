@@ -9,10 +9,28 @@
 #include <stdlib.h>
 
 using namespace std;
-string hexadecimal(vector<ObrasArte>);
+string hexadecimal(vector<ObrasArte>, vector<string>);
 
 int main(){
+	
+	vector <string> b;
+        b.push_back("1");
+        b.push_back("2");
+        b.push_back("3");
+        b.push_back("4");
+        b.push_back("5");
+        b.push_back("6");
+        b.push_back("7");
+        b.push_back("8");
+        b.push_back("9");
+        b.push_back("A");
+        b.push_back("B");
+        b.push_back("C");
+        b.push_back("D");
+        b.push_back("E");
+        b.push_back("F");
 
+	
 	vector <string> hexa;
 	vector <ObrasArte> Museum;
 	vector <ObrasArte> Transferido;
@@ -46,7 +64,7 @@ int main(){
                                                //agregar Literatura
                                                 string nombre, id, artista, Fecha, genero, epoca;
                                                         
-                                                id=hexadecimal(Museum);
+                                                id=hexadecimal(Museum,b);
                                                 cout<<"Ingrese nombre de la obra: "<<endl;
                                                 cin>>nombre;
                                                 cout<<"Ingrese artista de la Obra: "<<endl;
@@ -68,7 +86,7 @@ int main(){
 						string nombre, id, artista, Fecha, material;
 						int peso;
                                                         
-                                                id=hexadecimal(Museum);
+                                                id=hexadecimal(Museum,b);
                                                 cout<<"Ingrese nombre de la Escultura: "<<endl;
                                                 cin>>nombre;
                                                 cout<<"Ingrese artista de la Escultura: "<<endl;
@@ -92,7 +110,7 @@ int main(){
 						// Pintura
 						string nombre, id, artista, Fecha, materialLienzo, tecnica;
                                                         
-                                                id=hexadecimal(Museum);
+                                                id=hexadecimal(Museum,b);
                                                 cout<<"Ingrese nombre de la obra: "<<endl;
                                                 cin>>nombre;
                                                 cout<<"Ingrese artista de la Obra: "<<endl;
@@ -116,7 +134,7 @@ int main(){
 						
 					 	string nombre, id, artista, Fecha, tipo_terreno;
                                                 
-                                                id=hexadecimal(Museum);                                          
+                                                id=hexadecimal(Museum,b);                                          
                                                 cout<<"Ingrese nombre de la obra: "<<endl;
                                                 cin>>nombre;
                                                 cout<<"Ingrese artista de la Obra: "<<endl;
@@ -221,48 +239,29 @@ int main(){
      return 0;
 }
 
-string hexadecimal(vector<ObrasArte> a){
+string hexadecimal(vector<ObrasArte> a, vector<string> b){
 	int r;
-	string acum;
-	int cont=0;
-	vector <string> pauta;
-
-	pauta.push_back("1");
-	pauta.push_back("2");
-	pauta.push_back("3");
-	pauta.push_back("4");
-	pauta.push_back("5");
-	pauta.push_back("6");
-	pauta.push_back("7");
-	pauta.push_back("8");
-	pauta.push_back("9");
-	pauta.push_back("A");
-	pauta.push_back("B");
-	pauta.push_back("C");
-        pauta.push_back("D");
-        pauta.push_back("E");
-        pauta.push_back("F");
-
-	while(cont==0){
+	string aux;
+	int salir=1;
+	while(salir==1){
 		for(int i=0; i<6;i++){
 			r=rand()%15;
-			acum += pauta[r];
+			aux += b[r];
 		}
 
-		cont=1;
+		salir=4;
 	
 		for(int j=0; j<a.size();j++){
 		
-				if(acum==a[j].getID()){
-					cont=0;		
-			
+				if(aux==a[j].getID()){
+					salir=1;		
 				}
 		
 		}
 		
 	}
 
-	return acum;
+	return aux;
 
 	
 }
